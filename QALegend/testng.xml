@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite">
+	<listeners>
+		<listener class-name="Listeners.Listener">
+		</listener>
+	</listeners>
+	<parameter name="browser" value="Chrome"></parameter>
+  <test thread-count="5" name="Test">
+    <classes>
+     <!--  <class name="TestScript.QALegendEventTest"/> -->
+     <!--  <class name="TestScript.QALegendNoteTest"/> -->
+    <!--   <class name="TestScript.QALegendMessageTest"/> -->
+    <!--   <class name="TestScript.QALegendClientTest"/> -->
+           <class name="TestScript.QALegendProjectTest">
+             <methods>
+			<include name="VerifySearchForCompletedProjects"></include>
+             </methods>
+           </class>
+ </classes>
+  </test> 
+</suite> 

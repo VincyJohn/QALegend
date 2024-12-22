@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import Utilities.PageUtilities;
+import Utilities.WaitUtility;
 
 public class QALegendNotePage 
 {
@@ -24,8 +25,6 @@ WebElement savebutton;
 WebElement uploadfilebtn;
 @FindBy(xpath = "//div[@id='s2id_note_labels']")
 WebElement notelabel;
-/*@FindBy (xpath = "//input[@type='search']")
-@FindBy (xpath= "//input[@type='search']//self::input") */
 @FindBy (xpath="//div[@id='note-table_filter']//descendant::input")
 WebElement searchbox;
 @FindBy (xpath = "//a[@title='Note']")
@@ -51,16 +50,18 @@ public void addNote(String Title,String Description)
 	
 }
 
-public String getNoteAdded(String notename)
+public void searchNoteAdded(String notename)
 {
-	pageutilities.explicitWaitForElement(searchbox,2000);
-	pageutilities.javascriptScrollElementToView(searchbox);
+    WaitUtility.waitForClickingElement(driver, searchbox);
 	pageutilities.clickOnElement(searchbox);
 	pageutilities.enterText(searchbox, notename);
-	searchbox.sendKeys(notename);
-	String note1=pageutilities.readText(note);
-	return note1;
 	
 }
 
+public String getNoteAdded()
+{
+String note1=pageutilities.readText(note);
+return note1;
+
+}
 }

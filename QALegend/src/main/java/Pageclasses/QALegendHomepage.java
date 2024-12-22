@@ -27,6 +27,8 @@ public class QALegendHomepage {
 	WebElement Allprojectsbutton;
 	@FindBy (xpath = "//span[text()='Tickets']")
 	WebElement homepageticketbutton;
+	@FindBy (xpath = "//span[@class='topbar-user-name']")
+	WebElement CurrentUser;
 	
 	public QALegendHomepage(WebDriver driver) 
 	{
@@ -38,6 +40,11 @@ public class QALegendHomepage {
 	{
 		return (pageutilities.isElementDispalyed(userprofilename));
 		
+	}
+	public String findLoggeduser()
+	{
+		String loggedusername=pageutilities.readText(CurrentUser);
+		return loggedusername;
 	}
 
 	public void clickOnHomepageEventButton()

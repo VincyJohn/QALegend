@@ -258,11 +258,6 @@ public static Boolean compareTwoStrings(String str1,String str2)
 	return false;
 	
 }
-public void explicitWaitForElement(WebElement element, int waittime)
-{
-	WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(waittime));
-wait.until(ExpectedConditions.elementToBeClickable(element));
-}
 }
 
 

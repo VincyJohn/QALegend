@@ -20,12 +20,11 @@ public void verifyComposeMessage() throws IOException, InterruptedException
 		loginpage.login(prop.getProperty("username"),prop.getProperty("password"));
 		homepage.clickOnHomePageMessageButton();
 		String Tomailid =ExcelUtility.getStringData(1, 0, "Message");
-		String subject=ExcelUtility.getStringData(1, 1, "Message");
-		String messagearea=ExcelUtility.getStringData(1, 2, "Message");
-		messagepage.addMessage(Tomailid, subject, messagearea);
+		String subject=ExcelUtility.getStringData(1, 1, "Message")+FakerUtility.randomNumberGenerator();
+		String message=ExcelUtility.getStringData(1, 2, "Message");
+		messagepage.addMessage(Tomailid, subject, message);
 		messagepage.getMessageOnSentItems(subject);
-	/*	String notetext=messagepage.getMessageAdded(subject);
-		Boolean value=Boolean.valueOf(PageUtilities.compareTwoStrings(notetitlenew,notetext));
-		Assert.assertEquals(value, true); */
+	    String msg=messagepage.getMessageAdded();
+	    Assert.assertEquals(msg, message);
 }
 }

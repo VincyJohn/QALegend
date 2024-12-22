@@ -20,9 +20,9 @@ public class QALegendNoteTest extends BaseClass
 		String notetitlenew =ExcelUtility.getStringData(1, 0, "Note")+FakerUtility.randomNumberGenerator();
 		String notedescription=ExcelUtility.getStringData(1, 1, "Note");
 		notepage.addNote(notetitlenew, notedescription);
-		String notetext=notepage.getNoteAdded(notetitlenew);
-		Boolean value=Boolean.valueOf(PageUtilities.compareTwoStrings(notetitlenew,notetext));
-		Assert.assertEquals(value, true);
+		notepage.searchNoteAdded(notetitlenew);
+		String notetext=notepage.getNoteAdded();
+		Assert.assertEquals(notetext, notetitlenew);
 	}
 
 }

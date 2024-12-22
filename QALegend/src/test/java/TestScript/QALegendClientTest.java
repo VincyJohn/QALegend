@@ -6,17 +6,18 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import Utilities.ExcelUtility;
+import Utilities.FakerUtility;
 import Utilities.PageUtilities;
 
 public class QALegendClientTest extends BaseClass
 {
 	@Test
-	public void verifyAddClient() throws IOException
+	public void verifyAddClient() throws IOException, InterruptedException
 	{
 		loginpage.login(prop.getProperty("username"),prop.getProperty("password"));
 		homepage.clickOnHomePageClientButton();
 		clientpage.clickOnAddClientButton();
-		String company =ExcelUtility.getStringData(1, 0, "Client");
+		String company =ExcelUtility.getStringData(1, 0, "Client")+FakerUtility.randomNumberGenerator();
 		String addr=ExcelUtility.getStringData(1, 1, "Client");
 		String city=ExcelUtility.getStringData(1, 2, "Client");
 		String state=ExcelUtility.getStringData(1, 3, "Client");
@@ -24,9 +25,9 @@ public class QALegendClientTest extends BaseClass
 		String phone=ExcelUtility.getNumericData(1, 5, "Client");
 		String currency=ExcelUtility.getStringData(1, 6, "Client");
 		clientpage.addClient(company, addr, city, state, country, phone, currency);
-		clientpage.searchForAddedClient(company);
-	/*	Boolean value=Boolean.valueOf(PageUtilities.compareTwoStrings(company,clienttext));
-		Assert.assertEquals(value, true);*/
+		String client=clientpage.searchForAddedClient(company);
+		Assert.assertEquals(client,company );
+	
 	}
 
 }

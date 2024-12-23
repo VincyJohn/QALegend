@@ -7,12 +7,13 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="TestScript.QALegendTicketTest">
+      <class name="TestScript.QALegendClientTest">
         <methods>
+          <include name="verifyAddClient"/>
           <include name="browserinitialization"/>
-          <include name="verifyTicketAssignment"/>
+          <include name="afterMethod"/>
         </methods>
-      </class> <!-- TestScript.QALegendTicketTest -->
+      </class> <!-- TestScript.QALegendClientTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

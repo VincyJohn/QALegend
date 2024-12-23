@@ -8,9 +8,9 @@
   <test thread-count="5" name="Test">
     <classes>
      <!--  <class name="TestScript.QALegendEventTest"/> -->
-  <!--     <class name="TestScript.QALegendNoteTest"/>-->
-   <!-- <class name="TestScript.QALegendMessageTest"/>
-    <class name="TestScript.QALegendClientTest"/>-->
+ <!-- <class name="TestScript.QALegendNoteTest"/>-->
+  <!--  <class name="TestScript.QALegendMessageTest"/>-->
+    <class name="TestScript.QALegendClientTest"/>
           <!-- <class name="TestScript.QALegendProjectTest">
              <methods>
 			<include name="verifyAddProject"></include>
@@ -18,7 +18,7 @@
 			<include name="verifySearchForCompletedProjects"></include>
              </methods>
            </class>-->
-    <class name="TestScript.QALegendTicketTest"/>
+   <!-- <class name="TestScript.QALegendTicketTest"/>-->
  </classes>
   </test> 
 </suite> 

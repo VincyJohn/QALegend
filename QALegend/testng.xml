@@ -8,9 +8,14 @@
   <test thread-count="5" name="Test">
     <classes>
      <!--  <class name="TestScript.QALegendEventTest"/> -->
- <!-- <class name="TestScript.QALegendNoteTest"/>-->
+ <class name="TestScript.QALegendNoteTest"/>
   <!--  <class name="TestScript.QALegendMessageTest"/>-->
-    <class name="TestScript.QALegendClientTest"/>
+   <!-- <class name="TestScript.QALegendClientTest">
+		<methods>
+		<include name="verifyAddClient"></include>
+		<include name="verifyEditClient"></include>
+		</methods>
+		</class>-->
           <!-- <class name="TestScript.QALegendProjectTest">
              <methods>
 			<include name="verifyAddProject"></include>

@@ -9,8 +9,8 @@
     <classes>
       <class name="TestScript.QALegendClientTest">
         <methods>
-          <include name="verifyAddClient"/>
           <include name="browserinitialization"/>
+          <include name="verifyEditClient"/>
           <include name="afterMethod"/>
         </methods>
       </class> <!-- TestScript.QALegendClientTest -->

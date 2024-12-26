@@ -50,6 +50,8 @@ public class QALegendProjectPage
    WebElement nodatamsg;
    @FindBy (xpath = "(//td[text()='Completed'])[1]")
    WebElement completedstatus;
+   @FindBy(xpath = "//td[text()='Completed']")
+   List<WebElement> status;
   
 	public QALegendProjectPage(WebDriver driver) 
 	{
@@ -102,7 +104,6 @@ public class QALegendProjectPage
 	
 	public void verifyStatusForCompletedProjects()
 	{
-		List<WebElement> status=driver.findElements(By.xpath("//td[text()='Completed']"));
 		int s=status.size();
 		String statusval="Completed";
 		System.out.println(s);

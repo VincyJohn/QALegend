@@ -84,7 +84,7 @@ public void afterMethod(ITestResult itResult) throws IOException {
 		sc.captureFailureScreenshot(driver, itResult.getName());
 	}
 	if(driver!=null) {
-		driver.quit();
+	//	driver.quit();
 	}
 }
 

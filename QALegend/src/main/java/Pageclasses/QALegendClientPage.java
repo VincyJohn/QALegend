@@ -33,21 +33,18 @@ public class QALegendClientPage
 	WebElement Country;
 	@FindBy (name="phone")
 	WebElement Phone;
-	@FindBy (xpath = "(//span[contains(@id,'select2-chosen')])[3]")
-	WebElement Currency;
-	@FindBy (id="s2id_autogen5_search")
-	WebElement currencysearchbox;
 	@FindBy (id="disable_online_payment")
 	WebElement disableonlinepaymentcheckbox;
 	@FindBy (xpath = "//button[@type='submit']")
 	WebElement savebutton;
 	@FindBy (xpath = "//input[@type='search']")
-	//@FindBy(xpath = "//div[@id=\"client-table_filter\"]//descendant::input")
 	WebElement searchbox;
 	@FindBy (id="ajaxModalContent")
-	   WebElement addclientmodal;
+	WebElement addclientmodal;
 	@FindBy (xpath = "(//table[@id='client-table']//descendant::a)[1]")
 	WebElement companyname;
+	@FindBy (xpath="//a[@title='Edit client']")
+	WebElement editclientbutton;
 	public void clickOnAddClientButton() 
 	{
 		pageutilities.clickOnElement(addclientbutton);
@@ -60,12 +57,6 @@ public class QALegendClientPage
 		pageutilities.enterText(State,state);
 		pageutilities.enterText(Country,country);
 		Phone.sendKeys(phone);
-	/*	pageutilities.javascriptScrollElementToView(Currency);
-		Thread.sleep(3000);
-		pageutilities.javaScriptClick(Currency);
-		pageutilities.enterText(currencysearchbox,currency);
-		pageutilities.pageDownKeyPress();
-		pageutilities.EnterKeyPress(); */
 		pageutilities.javascriptScrollElementToView(disableonlinepaymentcheckbox);
 		pageutilities.selectCheckbox(disableonlinepaymentcheckbox);
 		pageutilities.clickOnElement(savebutton);
@@ -78,6 +69,15 @@ public class QALegendClientPage
 		pageutilities.enterText(searchbox,comp);
 		String client1=pageutilities.readText(companyname);
 		return client1;
+		
+	}
+	public void editNoteAdded()
+	{
+		pageutilities.clickOnElement(editclientbutton);
+		//pageutilities.scrollUp();
+		pageutilities.javascriptScrollElementToView(disableonlinepaymentcheckbox);
+		pageutilities.unselectCheckbox(disableonlinepaymentcheckbox);
+		pageutilities.clickOnElement(savebutton);
 		
 	}
 

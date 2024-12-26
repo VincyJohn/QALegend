@@ -29,5 +29,23 @@ public class QALegendClientTest extends BaseClass
 		Assert.assertEquals(client,company );
 	
 	}
+	@Test
+	public void verifyEditClient() throws IOException, InterruptedException
+	{
+		loginpage.login(prop.getProperty("username"),prop.getProperty("password"));
+		homepage.clickOnHomePageClientButton();
+		clientpage.clickOnAddClientButton();
+		String company =ExcelUtility.getStringData(1, 0, "Client")+FakerUtility.randomNumberGenerator();
+		String addr=ExcelUtility.getStringData(1, 1, "Client");
+		String city=ExcelUtility.getStringData(1, 2, "Client");
+		String state=ExcelUtility.getStringData(1, 3, "Client");
+		String country=ExcelUtility.getStringData(1, 4, "Client");
+		String phone=ExcelUtility.getNumericData(1, 5, "Client");
+		String currency=ExcelUtility.getStringData(1, 6, "Client");
+		clientpage.addClient(company, addr, city, state, country, phone, currency);
+		clientpage.searchForAddedClient(company);
+		clientpage.editNoteAdded();
+	
+	}
 
 }

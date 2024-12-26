@@ -7,7 +7,6 @@ import org.testng.annotations.Test;
 
 import Utilities.ExcelUtility;
 import Utilities.FakerUtility;
-import Utilities.PageUtilities;
 
 public class QALegendTicketTest extends BaseClass
 {

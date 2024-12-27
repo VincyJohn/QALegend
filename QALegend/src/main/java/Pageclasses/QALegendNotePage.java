@@ -35,6 +35,8 @@ WebElement notelabel;
 WebElement searchbox;
 @FindBy (xpath = "//a[@title='Note']")
 WebElement note;
+@FindBy(xpath = "//div[@id='ajaxModalContent']")
+WebElement notemodal;
 
 public QALegendNotePage(WebDriver driver)
 {
@@ -60,7 +62,8 @@ public void addNote(String Title,String Description,String path) throws AWTExcep
 
 public void searchNoteAdded(String notename)
 {
-    WaitUtility.waitForClickingElement(driver, searchbox);
+   // WaitUtility.waitForClickingElement(driver, searchbox);
+	WaitUtility.waitForInVisiblityOfElement(driver, notemodal);
 	pageutilities.clickOnElement(searchbox);
 	pageutilities.enterText(searchbox, notename);
 	

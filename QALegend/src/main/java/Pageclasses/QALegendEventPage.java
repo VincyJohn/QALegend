@@ -27,11 +27,11 @@ public class QALegendEventPage
 	@FindBy (id="description")
 	WebElement descriptionbox;
 	@FindBy (id="start_date")
-	WebElement startdate;
+	WebElement Startdate;
 	@FindBy (id="start_time")
 	WebElement starttime;
 	@FindBy (id="end_date")
-	WebElement enddate;
+	WebElement Enddate;
 	@FindBy (id="end_time")
 	WebElement endtime;
 	@FindBy (id="location")
@@ -49,12 +49,13 @@ public class QALegendEventPage
 	{
 		pageutilities.clickOnElement(addeventbutton);
 	}
-	public void addEvent(String title,String description)
+	public void addEvent(String title,String description,String startdate,String enddate)
 	{
 		titlebox.sendKeys(title);
 		pageutilities.enterText(descriptionbox, description);
-		startdate.sendKeys("2024-12-30");
-		enddate.sendKeys("2025-01-30");
+		pageutilities.enterText(Startdate, startdate);
+		pageutilities.enterText(Enddate, enddate);
+		//2024-12-30
 		
 	}
 	

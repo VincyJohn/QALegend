@@ -20,7 +20,6 @@ public class QALegendLoginPage
 	WebElement signinbutton;
 	@FindBy (xpath = "//div[@class='alert alert-danger']")
 	WebElement invalidloginerror;
-	
 	public QALegendLoginPage(WebDriver driver) 
 	{
 		this.driver=driver;

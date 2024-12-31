@@ -18,7 +18,9 @@ public void verifyAddEvent() throws IOException
 	eventpage.clickOnAddEventButton();
 	String eventtitle =ExcelUtility.getStringData(1, 0, "Event")+FakerUtility.randomNumberGenerator();
 	String eventdescription=ExcelUtility.getStringData(1, 1, "Event");
-	eventpage.addEvent(eventtitle, eventdescription);
+	String eventstartdate=ExcelUtility.getNumericData(1, 2, "Event");
+	String eventenddate=ExcelUtility.getNumericData(1, 3, "Event");
+	eventpage.addEvent(eventtitle, eventdescription,eventstartdate,eventenddate);
 	Assert.assertEquals(eventpage.eventPageSaveButtonStatusChecker(), true);
 }
 }

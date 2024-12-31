@@ -39,6 +39,7 @@ QALegendTicketPage ticketpage;
 public Properties prop;
 public FileInputStream fis;
 @BeforeMethod(alwaysRun = true)	
+//(groups={"Regression","Smoke"})
 @Parameters("browser")
 	public void browserinitialization(String browsername) throws Exception
 	{

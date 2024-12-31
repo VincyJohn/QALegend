@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import Utilities.ExcelUtility;
@@ -23,9 +24,9 @@ public class QALegendProjectTest extends BaseClass
 		String prjtitle =ExcelUtility.getStringData(1, 0, "Project")+FakerUtility.randomNumberGenerator();
 		String prjdescription=ExcelUtility.getStringData(1, 1, "Project");
 		projectpage.addProject(prjtitle, prjdescription);
-		projectpage.searchProjectAdded(prjtitle);
+		String project=projectpage.searchProjectAdded(prjtitle);
+		Assert.assertEquals(project,prjtitle );
 	}
-	
 	@Test
 	public void verifyDeleteProject() throws IOException, InterruptedException
 	{
@@ -38,16 +39,18 @@ public class QALegendProjectTest extends BaseClass
 		projectpage.addProject(prjtitle, prjdescription);
 		projectpage.searchProjectAdded(prjtitle);
 		projectpage.deleteProject();
-		projectpage.checkForDeletedProject();
+		Boolean MsgNodatafound=projectpage.checkForDeletedProject();
+		Assert.assertEquals(MsgNodatafound, true);
 		
 	}
-	@Test
+	@Test 
 	public void verifySearchForCompletedProjects()
 	{	
 		loginpage.login(prop.getProperty("username"),prop.getProperty("password"));
 		homepage.clickOnHomePageProjectButton();
 		homepage.clickOnHomePageAllProjectsButton();
 		projectpage.searchCompletedProject();
-		projectpage.verifyStatusForCompletedProjects();
+		Boolean status=projectpage.verifyStatusForCompletedProjects();
+		Assert.assertEquals(status, true);
 	}		
 }

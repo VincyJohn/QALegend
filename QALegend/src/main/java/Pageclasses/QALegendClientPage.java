@@ -71,13 +71,17 @@ public class QALegendClientPage
 		return client1;
 		
 	}
-	public void editNoteAdded()
+	public String editNoteAdded(String addr)
 	{
 		pageutilities.clickOnElement(editclientbutton);
-		//pageutilities.scrollUp();
-		pageutilities.javascriptScrollElementToView(disableonlinepaymentcheckbox);
-		pageutilities.unselectCheckbox(disableonlinepaymentcheckbox);
+		pageutilities.clearTextField(address);
+		pageutilities.enterText(address, addr);
 		pageutilities.clickOnElement(savebutton);
+		WaitUtility.waitForInVisiblityOfElement(driver, addclientmodal);
+		pageutilities.clickOnElement(editclientbutton);
+		String editedaddress=pageutilities.readText(address);
+		System.out.println(editedaddress);
+		return editedaddress;
 		
 	}
 

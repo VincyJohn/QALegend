@@ -52,6 +52,8 @@ public class QALegendProjectPage
    WebElement completedstatus;
    @FindBy(xpath = "//td[text()='Completed']")
    List<WebElement> status;
+   @FindBy (xpath = "(//td[@class=' w50']//following::a)[1]")
+   WebElement prjadded;
   
 	public QALegendProjectPage(WebDriver driver) 
 	{
@@ -73,11 +75,13 @@ public class QALegendProjectPage
 		pageutilities.clickOnElement(deadlinedateselectbtn);
 		pageutilities.clickOnElement(savebtn);
 	}
-	public void searchProjectAdded(String title) throws InterruptedException
+	public String searchProjectAdded(String title) throws InterruptedException
 	{
 		WaitUtility.waitForInVisiblityOfElement(driver, addprojectmodal);
 		pageutilities.javaScriptClick(srchbox);
 		pageutilities.enterText(srchbox, title);
+		String prjname=pageutilities.readText(prjadded);
+		return prjname;
 	}
 	public void deleteProject()
 	{		
@@ -86,10 +90,11 @@ public class QALegendProjectPage
 		pageutilities.isElementDispalyed(deletenotification);
 		
 	}
-	public void checkForDeletedProject()
+	public Boolean checkForDeletedProject()
 	{
 		pageutilities.javaScriptClick(srchbox);
-		pageutilities.isElementDispalyed(nodatamsg);
+		Boolean msgfound=pageutilities.isElementDispalyed(nodatamsg);
+		return msgfound;
 		
 	}
 	
@@ -102,9 +107,10 @@ public class QALegendProjectPage
 		WaitUtility.waitForVisiblityOfElement(driver, completedstatus);
 	}
 	
-	public void verifyStatusForCompletedProjects()
+	public Boolean verifyStatusForCompletedProjects()
 	{
 		int s=status.size();
+		Boolean status1 = null;
 		String statusval="Completed";
 		System.out.println(s);
 		Iterator<WebElement> lst= status.iterator();
@@ -113,14 +119,15 @@ public class QALegendProjectPage
 			String projectstatus =lst.next().getText();
 			if(statusval.equals(projectstatus))
 			{
-				System.out.println("All projects displayed have completed status");
+				status1=true;
 			}
 			else
 			{
-				System.out.println("Projects displayed are not in completed status");
+				status1=false;
 			}
+			
 		}
+		return status1;
 	}
-	
 	
 }

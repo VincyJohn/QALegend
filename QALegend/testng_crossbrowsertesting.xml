@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite">
+	<listeners>
+		<listener class-name="Listeners.Listener">
+		</listener>
+	</listeners>
+	<parameter name="browser" value="Chrome"></parameter>
+  <test thread-count="5" name="Test">
+    <classes>
+       <class name="TestScript.QALegendEventTest"/> 
+ <!--<class name="TestScript.QALegendNoteTest"/>
+    <class name="TestScript.QALegendMessageTest"/>
+   <class name="TestScript.QALegendClientTest">
+		<methods>
+		<include name="verifyAddClient"></include>
+	<include name="verifyEditClient"></include>
+		</methods>
+		</class>
+		 <class name="TestScript.QALegendProjectTest">
+             <methods>
+			<include name="verifyAddProject"></include>
+			<include name="verifyDeleteProject"></include>-
+			<include name="verifySearchForCompletedProjects"></include>
+             </methods>
+           </class>
+   <class name="TestScript.QALegendTicketTest"/>-->
+ </classes>
+  </test> 
+ <parameter name="browser" value="Edge"></parameter>
+   <test thread-count="5" name="Test1">
+    <classes>
+       <class name="TestScript.QALegendEventTest"/> 
+ <!--<class name="TestScript.QALegendNoteTest"/>
+    <class name="TestScript.QALegendMessageTest"/>
+   <class name="TestScript.QALegendClientTest">
+		<methods>
+		<include name="verifyAddClient"></include>
+	<include name="verifyEditClient"></include>
+		</methods>
+		</class>
+		 <class name="TestScript.QALegendProjectTest">
+             <methods>
+			<include name="verifyAddProject"></include>
+			<include name="verifyDeleteProject"></include>-
+			<include name="verifySearchForCompletedProjects"></include>
+             </methods>
+           </class>
+   <class name="TestScript.QALegendTicketTest"/>-->
+ </classes>
+  </test> 
+  <parameter name="browser" value="Firefox"></parameter>
+   <test thread-count="5" name="Test3">
+    <classes>
+       <class name="TestScript.QALegendEventTest"/> 
+ <!--<class name="TestScript.QALegendNoteTest"/>
+    <class name="TestScript.QALegendMessageTest"/>
+   <class name="TestScript.QALegendClientTest">
+		<methods>
+		<include name="verifyAddClient"></include>
+	<include name="verifyEditClient"></include>
+		</methods>
+		</class>
+		 <class name="TestScript.QALegendProjectTest">
+             <methods>
+			<include name="verifyAddProject"></include>
+			<include name="verifyDeleteProject"></include>-
+			<include name="verifySearchForCompletedProjects"></include>
+             </methods>
+           </class>
+   <class name="TestScript.QALegendTicketTest"/>-->
+ </classes>
+  </test> 
+</suite> 

@@ -19,9 +19,8 @@ static FileInputStream f;
 static XSSFWorkbook w;
 static XSSFSheet sh;
 
-public static String getStringData(int row,int col,String sheet) throws IOException 
+public static String getStringData(int row,int col,String filepath,String sheet) throws IOException 
 {
-	String filepath=ConstantsValues.TESTDATAFILE;
 			f= new FileInputStream(filepath);
 	w=new XSSFWorkbook(f);
 	sh=w.getSheet(sheet);
@@ -31,9 +30,8 @@ public static String getStringData(int row,int col,String sheet) throws IOExcept
 	
 	
 }
-public static String getNumericData(int row,int col,String sheet) throws IOException 
+public static String getNumericData(int row,int col,String filepath,String sheet) throws IOException 
 {
-	String filepath=ConstantsValues.TESTDATAFILE;
 			f= new FileInputStream(filepath);
 	w=new XSSFWorkbook(f);
 	sh=w.getSheet(sheet);

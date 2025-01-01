@@ -55,7 +55,7 @@ public class QALegendTicketPage
 		pageutilities.javaScriptClick(addticketbutton);
 	
 	}
-	public void addTicket(String title,String description,String client)
+	public QALegendTicketPage addTicket(String title,String description,String client)
 	{
 		pageutilities.enterText(tickettitlebox, title);
 		pageutilities.clickOnElement(ticketclientdrpdwn);
@@ -65,6 +65,7 @@ public class QALegendTicketPage
 		pageutilities.EnterKeyPress();
 		pageutilities.enterText(ticketdescriptionbox, description);
 		pageutilities.clickOnElement(savebtn);
+		return this;
 	}
 	public void searchTicketAdded(String title) throws InterruptedException
 	{

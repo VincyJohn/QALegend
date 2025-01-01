@@ -35,4 +35,11 @@ public class FakerUtility
 		String text= address.lastName();
 		return text;
 	}
+	public String getFakeCityname()
+	{
+		Faker faker =new Faker();
+		Address address=faker.address();
+		String text= address.cityName();
+		return text;
+	}
 }

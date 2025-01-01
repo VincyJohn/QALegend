@@ -66,7 +66,7 @@ public class QALegendProjectPage
 		
 		pageutilities.clickOnElement(addprojectbutton);
 	}
-	public void addProject(String title,String description)
+	public QALegendProjectPage addProject(String title,String description)
 	{
 		pageutilities.enterText(projecttitlebox, title);
 		pageutilities.enterText(projectdescriptionbox, description);
@@ -74,6 +74,7 @@ public class QALegendProjectPage
 		pageutilities.clickOnElement(deadlinedatebox);
 		pageutilities.clickOnElement(deadlinedateselectbtn);
 		pageutilities.clickOnElement(savebtn);
+		return this;
 	}
 	public String searchProjectAdded(String title) throws InterruptedException
 	{
@@ -83,12 +84,12 @@ public class QALegendProjectPage
 		String prjname=pageutilities.readText(prjadded);
 		return prjname;
 	}
-	public void deleteProject()
+	public QALegendProjectPage deleteProject()
 	{		
 		pageutilities.clickOnElement(deleteprojectbutton);
 		pageutilities.clickOnElement(confirmdeletebtn);
 		pageutilities.isElementDispalyed(deletenotification);
-		
+		return this;
 	}
 	public Boolean checkForDeletedProject()
 	{

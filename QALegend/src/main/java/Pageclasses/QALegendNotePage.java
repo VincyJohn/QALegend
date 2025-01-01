@@ -50,14 +50,14 @@ public void clickOnAddNotebutton()
 	pageutilities.clickOnElement(addnotebutton);
 }
 
-public void addNote(String Title,String Description,String path) throws AWTException, InterruptedException
+public QALegendNotePage addNote(String Title,String Description,String path) throws AWTException, InterruptedException
 {
 	pageutilities.enterText(notetitle, Title);
 	notedescription.sendKeys(Description);
 	pageutilities.clickOnElement(uploadfilebtn);
 	fileUpload(path);
 	pageutilities.clickOnElement(savebutton);
-	
+	return this;
 }
 
 public void searchNoteAdded(String notename)

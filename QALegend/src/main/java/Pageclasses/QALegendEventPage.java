@@ -53,7 +53,9 @@ public class QALegendEventPage
 	{
 		titlebox.sendKeys(title);
 		pageutilities.enterText(descriptionbox, description);
+		pageutilities.clickOnElement(Startdate);
 		pageutilities.enterText(Startdate, startdate);
+		pageutilities.clickOnElement(Enddate);
 		pageutilities.enterText(Enddate, enddate);
 		//2024-12-30
 		

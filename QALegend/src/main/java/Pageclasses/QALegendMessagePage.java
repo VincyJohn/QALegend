@@ -52,10 +52,11 @@ public class QALegendMessagePage
 		
 	}	
 	
-	public void getMessageOnSentItems(String str) throws InterruptedException
+	public QALegendMessagePage getMessageOnSentItems(String str) throws InterruptedException
 	{
 		pageutilities.javaScriptClick(sentitems);
 		searchtxtbox.sendKeys(str);
+		return this;
 	}
 	
 	public String getMessageAdded()

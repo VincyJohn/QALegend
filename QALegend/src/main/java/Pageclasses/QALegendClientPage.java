@@ -49,7 +49,7 @@ public class QALegendClientPage
 	{
 		pageutilities.clickOnElement(addclientbutton);
 	}
-	public void addClient(String company,String addr,String city,String state,String country,String phone,String currency) throws InterruptedException
+	public QALegendClientPage addClient(String company,String addr,String city,String state,String country,String phone,String currency) throws InterruptedException
 	{
 		pageutilities.enterText(companynamebox,company);
 		pageutilities.enterText(address,addr);
@@ -60,6 +60,7 @@ public class QALegendClientPage
 		pageutilities.javascriptScrollElementToView(disableonlinepaymentcheckbox);
 		pageutilities.selectCheckbox(disableonlinepaymentcheckbox);
 		pageutilities.clickOnElement(savebutton);
+		return this;
 	}
 	
 	public String searchForAddedClient(String comp) throws InterruptedException

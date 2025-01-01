@@ -55,8 +55,10 @@ public class QALegendEventPage
 		pageutilities.enterText(descriptionbox, description);
 		pageutilities.clickOnElement(Startdate);
 		pageutilities.enterText(Startdate, startdate);
+		pageutilities.EnterKeyPress();
 		pageutilities.clickOnElement(Enddate);
 		pageutilities.enterText(Enddate, enddate);
+		pageutilities.EnterKeyPress();
 		//2024-12-30
 		
 	}

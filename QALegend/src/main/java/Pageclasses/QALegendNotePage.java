@@ -62,7 +62,6 @@ public QALegendNotePage addNote(String Title,String Description,String path) thr
 
 public void searchNoteAdded(String notename)
 {
-   // WaitUtility.waitForClickingElement(driver, searchbox);
 	WaitUtility.waitForInVisiblityOfElement(driver, notemodal);
 	pageutilities.clickOnElement(searchbox);
 	pageutilities.enterText(searchbox, notename);
@@ -81,7 +80,6 @@ public void fileUpload(String path) throws AWTException, InterruptedException
 	StringSelection stringselection=new StringSelection(path);
 	Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringselection, null);
 	Robot robot = new Robot();
-	Thread.sleep(4000);
 	robot.keyPress(KeyEvent.VK_CONTROL);
 	robot.keyPress(KeyEvent.VK_V);
 	robot.keyRelease(KeyEvent.VK_V);

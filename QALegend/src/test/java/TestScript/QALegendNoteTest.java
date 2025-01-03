@@ -13,7 +13,8 @@ import Utilities.PageUtilities;
 
 public class QALegendNoteTest extends BaseClass
 {
-	@Test(retryAnalyzer=TestScript.RetryAnalyser.class)
+	@Test
+	//(retryAnalyzer=TestScript.RetryAnalyser.class)
 	public void verifyAddNoteTest() throws IOException, AWTException, InterruptedException
 	{
 		loginpage.login(prop.getProperty("username"),prop.getProperty("password"));

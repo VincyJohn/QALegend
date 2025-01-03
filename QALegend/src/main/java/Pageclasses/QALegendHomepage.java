@@ -51,9 +51,6 @@ public class QALegendHomepage {
 	{
 		homepageeventbutton.click();
 	}
-	
-	
-	
 	public void clickOnHomePageNoteButton()
 	{
 		homepagenotebutton.click();

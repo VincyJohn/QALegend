@@ -28,7 +28,14 @@ public class PageUtilities
 	{
 		element.click();
 	}
-	
+	public void enterText(WebElement element,String text)
+	{
+		element.sendKeys(text);
+	}
+	public void clearTextField(WebElement element)
+	{
+		element.clear();
+	}
 	public void selectByIndex(WebElement dropdown,int index)
 	{
 		Select drpdwn =new Select(dropdown);
@@ -66,10 +73,6 @@ public void rightClick()
 {
 	Actions action= new Actions(driver);
 	action.contextClick().build().perform();
-}
-public void enterText(WebElement element,String text)
-{
-	element.sendKeys(text);
 }
 public void javaScriptClick(WebElement element)
 {
@@ -109,10 +112,6 @@ public String readAttribute(WebElement element,String attribute)
 {
 	return element.getAttribute(attribute);
 	
-}
-public void clearTextField(WebElement element)
-{
-	element.clear();
 }
 public void selectCheckbox(WebElement checkbox)
 {
@@ -244,19 +243,6 @@ public void pageDownKeyPress()
 	action.sendKeys(Keys.PAGE_DOWN);
 	action.build().perform();
 
-}
-public static Boolean compareTwoStrings(String str1,String str2)
-{
-	if (str1.toLowerCase().equals(str2.toLowerCase()))
-	{
-	return true;
-	}
-	else
-	{
-	
-	}
-	return false;
-	
 }
 }
 

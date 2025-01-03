@@ -58,9 +58,7 @@ public class QALegendEventPage
 		pageutilities.EnterKeyPress();
 		pageutilities.clickOnElement(Enddate);
 		pageutilities.enterText(Enddate, enddate);
-		pageutilities.EnterKeyPress();
-		//2024-12-30
-		
+		pageutilities.EnterKeyPress();		
 	}
 	
 	public Boolean eventPageSaveButtonStatusChecker()

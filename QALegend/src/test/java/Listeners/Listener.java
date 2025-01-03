@@ -19,7 +19,6 @@ public class Listener extends BaseClass implements ITestListener
 
 	@Override
 	public void onTestStart(ITestResult result) {
-		// TODO Auto-generated method stub
 		ITestListener.super.onTestStart(result);
 		test=extent.createTest(result.getMethod().getMethodName());
 		extenttest.set(test);
@@ -27,14 +26,12 @@ public class Listener extends BaseClass implements ITestListener
 
 	@Override
 	public void onTestSuccess(ITestResult result) {
-		// TODO Auto-generated method stub
 		ITestListener.super.onTestSuccess(result);
 		extenttest.get().log(Status.PASS, "Test Case Passed");
 	}
 
 	@Override
 	public void onTestFailure(ITestResult result) {
-		// TODO Auto-generated method stub
 		ITestListener.super.onTestFailure(result);
 		extenttest.get().fail(result.getThrowable());
 		extenttest.get().log(Status.FAIL, "Test Case Failed");
@@ -42,32 +39,27 @@ public class Listener extends BaseClass implements ITestListener
 
 	@Override
 	public void onTestSkipped(ITestResult result) {
-		// TODO Auto-generated method stub
 		ITestListener.super.onTestSkipped(result);
 		extenttest.get().log(Status.SKIP, "Test Case Skipped");
 	}
 
 	@Override
 	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-		// TODO Auto-generated method stub
 		ITestListener.super.onTestFailedButWithinSuccessPercentage(result);
 	}
 
 	@Override
 	public void onTestFailedWithTimeout(ITestResult result) {
-		// TODO Auto-generated method stub
 		ITestListener.super.onTestFailedWithTimeout(result);
 	}
 
 	@Override
 	public void onStart(ITestContext context) {
-		// TODO Auto-generated method stub
 		ITestListener.super.onStart(context);
 	}
 
 	@Override
 	public void onFinish(ITestContext context) {
-		// TODO Auto-generated method stub
 		ITestListener.super.onFinish(context);
 		extent.flush();
 	}
